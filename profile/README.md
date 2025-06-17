@@ -1,7 +1,3 @@
-## Hi there 👋
-
-<!--
-
 # 🧩 Omnixys – The Fabric of Modular Innovation
 
 ![CI](https://github.com/omnixys/omnixys-ui/actions/workflows/ci.yml/badge.svg)
@@ -175,4 +171,3 @@ Die vollständige Roadmap wird im GitHub Project gepflegt: [Omnixys Roadmap Proj
 * [Logger-Dokumentation](./logging-guidelines.md)
 * [Beispiel-Deployments](https://github.com/omnixys/omnixys-cloud-deployer)
 * [Landingpage & UI-Demo](https://omnixys.com)
-
