@@ -1,7 +1,6 @@
 # 🧩 Omnixys – The Fabric of Modular Innovation
 
-![CI](https://github.com/omnixys/omnixys-ui/actions/workflows/ci.yml/badge.svg)
-![CD](https://github.com/omnixys/omnixys-ui/actions/workflows/cd.yml/badge.svg)
+![CI/CD](https://github.com/omnixys/omnixys-ui/actions/workflows/ci-cd.yml/badge.svg)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE.md)
 [![Security Policy](https://img.shields.io/badge/security-policy-blue)](./SECURITY.md)
 [![Made with ❤ by Omnixys](https://img.shields.io/badge/made%20with-%E2%9D%A4-ff69b4)](https://omnixys.com)
