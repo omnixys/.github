@@ -1,0 +1,72 @@
+@startuml Komponenten
+
+left to right direction
+
+actor RESTClient
+actor GraphQLClient
+
+node "Nest" {
+  [RequestLoggerMiddleware]
+
+  [BankkontoController]
+  [BankkontoResolver]
+
+  [BankkontoService]
+
+  [Repository<Bankkonto>]
+
+  [MailService]
+}
+
+
+cloud {
+    [TypeORM]
+}
+
+cloud {
+    [nest-keycloak-connect]
+}
+
+cloud {
+    [nodemailer]
+}
+
+database "DB Bankkonto" {
+    [Tabelle bankkonto]
+    [Tabelle kunde]
+    [Tabelle transaktion]
+}
+
+node {
+    [Keycloak]
+}
+
+node {
+    [Mailserver]
+}
+
+RESTClient ~~> [RequestLoggerMiddleware]
+GraphQLClient ~~> [RequestLoggerMiddleware]
+
+[RequestLoggerMiddleware] ~~> [BankkontoController]
+[RequestLoggerMiddleware] ~~> [BankkontoResolver]
+
+[BankkontoController] ..> [BankkontoService]
+[BankkontoResolver] ..> [BankkontoService]
+[BankkontoService] ..> [Repository<Bankkonto>]
+
+[Repository<Bankkonto>] ~~> [TypeORM]
+[TypeORM] ~~> [Tabelle bankkonto]
+[TypeORM] ~~> [Tabelle kunde]
+[TypeORM] ~~> [Tabelle transaktion]
+
+[BankkontoController] ..> [nest-keycloak-connect]
+[nest-keycloak-connect] ~~> [Keycloak]
+
+[BankkontoService] ..> [MailService]
+[MailService] ~~> [nodemailer]
+[nodemailer] ~~> [Mailserver]
+
+[MailService] ~[hidden]~> [nest-keycloak-connect]
+
+@enduml
